@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\ClientsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ClientsController::class, 'index']);
+Route::get('/visualizar-usuarios', [ClientsController::class, 'show']);
+
 Route::get('/user', function () {
     return view('users');
 });
